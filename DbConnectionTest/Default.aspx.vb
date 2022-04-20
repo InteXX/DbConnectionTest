@@ -17,8 +17,8 @@ Public Class _Default
       End Using
 
     Catch ex As Exception
-      sValue = $"Connection string: {Utils.RunTimeConnectionString}
-Can connect via ADO.NET: {Utils.CanConnect(Utils.RunTimeConnectionString)}
+      sValue = $"Connection string: {Utils.DbConnectionString}
+Can connect via ADO.NET: {Utils.CanConnect(Utils.DbConnectionString)}
 
 Error when attempting to connect via EntityFramework:
 {ex}"

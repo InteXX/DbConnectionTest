@@ -9,7 +9,7 @@ Namespace Db
     Inherits DbContext
 
     Public Sub New()
-      MyBase.New(Utils.DesignTimeConnectionString)
+      MyBase.New(Utils.DbConnectionString)
     End Sub
 
 
@@ -26,7 +26,7 @@ Namespace Db
 
 
     Public Shared Function Create() As Context
-      Return New Context(New SqlConnection(Utils.RunTimeConnectionString))
+      Return New Context(New SqlConnection(Utils.DbConnectionString))
     End Function
 
 

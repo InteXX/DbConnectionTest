@@ -5,38 +5,23 @@ Imports System.Data.SqlClient
 
 Namespace Db
   Friend Class Utils
-    ''' <summary>
-    ''' This connection string is used for EF6 Code First
-    ''' operations initiated from the Package Manager
-    ''' Console, e.g. Add-Migration, Update-Database, etc.
-    ''' </summary>
-    ''' <returns>A connection string.</returns>
-    Friend Shared ReadOnly Property DesignTimeConnectionString() As String
+    Friend Shared ReadOnly Property DbConnectionString() As String
       Get
-        With New SqlConnectionStringBuilder
-          .MultipleActiveResultSets = True
-          .PersistSecurityInfo = False
-          .IntegratedSecurity = False
-          .InitialCatalog = DB_NAME
-          .DataSource = Environment.MachineName
-          .Password = ""
-          .UserID = ""
+        If ConfigurationManager.ConnectionStrings Is Nothing Then
+          With New SqlConnectionStringBuilder
+            .MultipleActiveResultSets = True
+            .PersistSecurityInfo = False
+            .IntegratedSecurity = False
+            .InitialCatalog = DB_NAME
+            .DataSource = Environment.MachineName
+            .Password = ""
+            .UserID = ""
 
-          Return .ConnectionString
-        End With
-      End Get
-    End Property
-
-
-
-    ''' <summary>
-    ''' This connection string is used for application runtime
-    ''' operations, e.g. loading data for display on web pages.
-    ''' </summary>
-    ''' <returns>A connection string.</returns>
-    Friend Shared ReadOnly Property RunTimeConnectionString() As String
-      Get
-        Return ConfigurationManager.ConnectionStrings(DB_NAME).ConnectionString
+            DbConnectionString = .ConnectionString
+          End With
+        Else
+          DbConnectionString = ConfigurationManager.ConnectionStrings(DB_NAME).ConnectionString
+        End If
       End Get
     End Property
 

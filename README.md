@@ -37,7 +37,7 @@ To prepare for running this application, perform these steps:
 To run this application, perform these steps:
 
 1. Show all files in the project
-2. Edit `Db\Utils.vb` to provide the datasource and credentials for the design-time connection string
+2. Edit `Db\Utils.vb` to provide the datasource and credentials for the design-time connection string (the login must have `DbCreator` permissions)
 3. Edit `Web.config` to provide the connection string for the local database
 4. Edit `Web.release.config` to provide the connection string for the Azure SQL database
 
