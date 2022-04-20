@@ -48,6 +48,6 @@ To run this application, perform these steps:
 3. Using the publish profile you created earlier, publish the application to Azure
 4. Browse to the newly created website
 5. Note that the TextArea control displays:
-    a. The connection string that was used for the connection attempt
-    b. A report indicating that the ADO.NET connection was successful
-    c. The EntityFramework connection error stack trace
+    1. The connection string that was used for the connection attempt
+    2. A report indicating that the ADO.NET connection was successful
+    3. The EntityFramework connection error stack trace
