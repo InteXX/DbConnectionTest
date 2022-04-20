@@ -29,7 +29,7 @@ neither attempt is logged by the Azure SQL Server.
 To prepare for running this application, perform these steps:
 
 1. Create a new Azure Web App
-2. Download and import the WebDeploy publish settings into the project
+2. Download and import the WebDeploy publish settings into the project (you may wish to remove the current profile)
 3. Ensure the profile's configuration is set to `Release`
 4. Using the Azure Portal (not SSMS), create a new empty Azure SQL database named `DbConnectionTest`
 5. Copy the connection string to the clipboard for Step 4 below
