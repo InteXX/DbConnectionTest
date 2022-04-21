@@ -51,3 +51,7 @@ To run this application, perform these steps:
     1. The connection string that was used for the connection attempt
     2. A report indicating that the ADO.NET connection was successful
     3. The EntityFramework connection error stack trace
+
+### UPDATE: Resolution
+
+The problem has been solved. For detailed information about the solution, see the answer at [StackOverflow](https://stackoverflow.com/a/71947507).
